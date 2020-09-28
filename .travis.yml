@@ -8,10 +8,15 @@ php:
 
 before_install:
   - sudo apt update
-  - sudo apt install unzip zip libzip-dev -y
+  - sudo apt install unzip -y
+  - sudo apt install zip -y
+  - sudo apt install libzip-dev -y
+  - sudo apt install libz-dev -y
   - composer self-update
   - composer validate
-  - yes '' | pecl install -f apcu zip
+  - yes '' | pecl install -f apcu
+  - yes '' | pecl install -f zlib
+  - yes '' | pecl install -f zip
 
 install:
   - composer install --prefer-dist
