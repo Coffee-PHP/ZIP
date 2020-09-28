@@ -12,11 +12,10 @@ before_install:
   - sudo apt install zip -y
   - sudo apt install libzip-dev -y
   - sudo apt install libz-dev -y
-  - sudo apt install php-zip
+  - sudo apt install php-zip -y
   - composer self-update
   - composer validate
   - yes '' | pecl install -f apcu
-  - yes '' | pecl install -f zip
 
 install:
   - composer install --prefer-dist
