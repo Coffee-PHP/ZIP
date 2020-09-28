@@ -1,0 +1,19 @@
+os:
+  - linux
+
+language: php
+
+php:
+  - '7.4'
+
+before_install:
+  - sudo apt install unzip
+  - composer self-update
+  - composer validate
+  - yes '' | pecl install -f apcu zip
+
+install:
+  - composer install --prefer-dist
+
+script:
+  - composer coffeephp:exec:analyse
