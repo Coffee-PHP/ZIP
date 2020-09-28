@@ -7,7 +7,9 @@ php:
   - '7.4'
 
 before_install:
-  - sudo apt install unzip zip libzip-dev
+  - sudo apt update
+  - sudo apt upgrade -y
+  - sudo apt install unzip zip libzip-dev -y
   - composer self-update
   - composer validate
   - yes '' | pecl install -f apcu zip
